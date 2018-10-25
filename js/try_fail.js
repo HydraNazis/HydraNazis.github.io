@@ -718,13 +718,19 @@ default = {
 			var t = this;
 			this.fetchPosts().then(function() {
 				document.title = "Posts | " + t.siteCfg.title
+				console.log("url(" + window.root + "img/bg.jpg)");
 			})
 		},
 		components: {
 			"only-container": r.a,
 			"only-post": u.a
 		},
-		computed: a()({}, n.i(s.a)(["posts", "siteCfg", "themeCfg"])),
+		computed: a()({}, n.i(s.a)(["posts", "siteCfg", "themeCfg"]), {
+			style: function() {
+				console.log("url(" + window.root + "img/bg.jpg)");
+				return{backgroundImage: "url(" + window.root + "img/bg.jpg)"}
+			}
+		}),
 		methods: a()({}, n.i(s.b)(["fetchPosts"]))
 	}
 }, function(t, e, n) {
@@ -747,7 +753,8 @@ default = {
 		},
 		computed: a()({}, n.i(s.a)(["themeCfg", "siteCfg"]), {
 			style: function() {
-                if ( document.title == "Home | " + this.siteCfg.title)
+				console.log("url(" + window.root + "img/bg.jpg)");
+                if (document.title=='Home | Play with HydraNazis')
                 {
                     return {backgroundImage: "url(" + window.root + "img/background.jpg)"}
                 }
